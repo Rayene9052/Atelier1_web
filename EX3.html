@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Todo</title>
+</head>
+<body>
+    <div class="col" id="list">
+    </div>
+    <div>
+        <label for="jour">jour:</label>
+        <input type="text" id="jour" placeholder="Entrer le jour ici">
+    </div>
+    <div>
+        <label for="content">content</label>
+        <input type="text" id="content" placeholder="Entrer le contenu içi">
+    </div>
+    <div>
+        <button type="button" id="button">TODO</button>
+    </div>
+    <script>
+        const submit=document.getElementById("button")
+        submit.addEventListener("click", () => {
+        let content = document.getElementById("content")
+        let jour = document.getElementById("jour")
+
+      let cont = document.createElement("div");
+       cont.className = "form-control";
+
+    let element = document.createElement("div")
+    element.className = "row"
+    let text = document.createElement("div")
+    text.textContent = jour.value + "  :  " + content.value
+    let supp = document.createElement("button");
+    supp.className = "col-2 btn btn-primary";
+    supp.textContent = "🗑️";
+
+    element.appendChild(text);
+    element.appendChild(supp);
+    cont.appendChild(element);
+     list.appendChild(cont);
+     jour.value = content.value = "" ;
+     supp.addEventListener("click", () => {
+        cont.parentNode.removeChild(cont) ;
+        })
+    })
+    </script>
+</body>
+</html>

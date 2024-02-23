@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Word</title>
+</head>
+<body> 
+<div>
+    <label for="color">Couleur:</label>
+    <input type="color" id="color"  onchange=setcolor()>  
+</div>
+
+<div>
+    <label for="size">Taille de police:</label>
+    <input type="number" id="size" onchange=setsize()>
+</div>
+
+
+<div>
+    <label for="police">Police:</label>
+    <select id="police" onchange=setpolice()>
+        <option value="Arial Black">Arial Black</option>
+        <option value="Garamond" >Garamond</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Arial">Arial</option>
+      </select>
+    
+</div>
+<div>
+    
+
+
+</div>
+<div id="texte" contenteditable="true">
+    Texte à éditer
+</div>
+
+
+<script>
+    function setcolor()
+    {
+        let color =document.getElementById("color")
+        let texte=document.getElementById("texte")
+        texte.style.color=color.value
+}
+    function setsize()
+    {
+        let texte=document.getElementById("texte")
+        let size=document.getElementById("size")
+        texte.style.fontSize=size.value+"px"
+    }
+    function setpolice()
+    {
+        let texte=document.getElementById("texte")
+        let police=document.getElementById("police")
+        texte.style.fontFamily=police.value
+    }
+</script>
+
+
+</body>
+</html>

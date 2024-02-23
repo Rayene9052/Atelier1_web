@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Devinette</title>
+</head>
+<body>
+    <script>
+       function main(){
+        let choice =parseInt(window.prompt("Choisir le chiffre du  difficulté : 1/Facile , 2/Meduim , 3/Difficile"));
+        switch(choice ){
+
+            case 1:
+                let essais=5;
+                let randnb =Math.floor(Math.random() * (10  + 1)) ;
+                let valide=false;
+                while(!valide && essais!=0)
+                {
+                    let x=parseInt(window.prompt("Donner  un nombre entre 1 et 10"))
+                    if (randnb==x)
+                    { alert("Félicatations vous avez gagné");
+                        valide=true;}
+                    else 
+                    {
+                        essais--;
+                        alert(`Nombre faux, vous avez ${essais} essais restants`);
+                        if (essais==0 && valide==false)
+                        { 
+                            alert(`Désolé, vous avez perdu ! le nombre était ${randnb} `);
+                        }
+                    }
+                }break;
+            case 2:
+                let essaiss=25;
+                let randnbb =Math.floor(Math.random() * (50  + 1)) ;
+                let validee=false;
+                while(!validee && essaiss!=0)
+                {
+                    let y=parseInt(window.prompt("Donner  un nombre entre 1 et 50"))
+                    if (randnbb==y)
+                    { alert("Félicatations vous avez gagné");
+                        validee=true;}
+                    else 
+                    {
+                        essaiss--;
+                        alert(`Nombre faux, vous avez ${essaiss} essais restants`);
+                        if (essaiss==0 && validee==false)
+                        { 
+                            alert(`Désolé, vous avez perdu ! le nombre était ${randnbb} `);
+                        }
+                    }
+                } break;
+            case 3:
+            let essaisss=50;
+                let randnbbb =Math.floor(Math.random() * (100  + 1)) ;
+                let valideee=false;
+                while(!valideee && essaisss!=0)
+                {
+                    let z=parseInt(window.prompt("Donner  un nombre entre 1 et 100"))
+                    if (randnbbb==z)
+                    { alert("Félicatations vous avez gagné");
+                        valideee=true;}
+                    else 
+                    {
+                        essaisss--;
+                        alert(`Nombre faux, vous avez ${essaisss} essais restants`);
+                        if (essaisss==0 && valideee==false)
+                        { 
+                            alert(`Désolé, vous avez perdu ! le nombre était ${randnbbb} `);
+                        }
+                    }
+                } break;
+            default :
+            alert("Difficulté non valide "); break;
+
+        }
+
+
+
+       } main();
+   
+        
+       
+    </script>
+</body>
+</html>
